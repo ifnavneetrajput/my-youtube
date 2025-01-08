@@ -1,0 +1,14 @@
+
+import appSlice from "./appSlice";
+import popularVideos from './popularVideosSlice'
+// const { configureStore } = require("@reduxjs/toolkit");
+import { configureStore } from "@reduxjs/toolkit";
+
+const appStore = configureStore({
+  reducer: {
+    app: appSlice,
+    popularVideos:popularVideos,
+  },
+});
+
+export default appStore;
