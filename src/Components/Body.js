@@ -1,13 +1,15 @@
 import React from 'react'
 import Sidebar from './Sidebar'
-import MainConatiner from './MainConatiner'
+
 import usePopularVideos from '../hooks/usePopularVideos'
+
+import { Outlet } from 'react-router-dom'
 const Body = () => {
   usePopularVideos();
   return (
     <div className='flex'>
       <Sidebar />
-      <MainConatiner/>
+      <Outlet/>
     </div>
   )
 }

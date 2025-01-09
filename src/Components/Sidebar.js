@@ -1,12 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const toggleMenu = useSelector((store) => store.app.isMenuOpen);
   if (!toggleMenu) return null;
   return (
     <div className=" w-40 px-5 mx-6">
-      <h1>Home</h1>
+      <Link to='/' >Home</Link>
       <h1>shorts</h1>
       <h1>Subscription</h1>
       <hr></hr>

@@ -15,11 +15,13 @@ const Head = () => {
           alt="menu"
           src="https://static.vecteezy.com/system/resources/thumbnails/002/292/406/small/hamburger-menu-line-icon-free-vector.jpg"
         />
-        <img
-          className="h-8 mx-2 w-3/4 object-cover"
-          alt="youtube logo"
-          src="https://download.logo.wine/logo/YouTube/YouTube-Logo.wine.png"
-        />
+        <a href="/">
+          <img
+            className="h-12 mx-2 w-full object-cover"
+            alt="youtube logo"
+            src="https://download.logo.wine/logo/YouTube/YouTube-Logo.wine.png"
+          />
+        </a>
       </div>
       <div className="flex col-span-10 mx-8">
         <input
@@ -28,7 +30,7 @@ const Head = () => {
         />
         <button className="cursor-pointer">
           <img
-            className=" h-8 border border-gray-400 rounded-r-lg "
+            className=" h-8 border  px-4 mb-5 border-gray-400 rounded-r-lg "
             alt="serach logo"
             src="https://img.icons8.com/ios7/600/search.png"
           />

@@ -2,13 +2,13 @@ import React from 'react'
 
 const VideoCard = ({ id, thumbnail, channelTitle, title, views }) => {
   return (
-    <div className="mx-4 my-6">
-      <img alt="thumbnail" src={thumbnail} />
-      <div className='flex flex-wrap h-10 w-4'>
-        <h1>{title}</h1>
-      </div>
-      <h1>{views}</h1>
-      <h1>{channelTitle}</h1>
+    <div className="p-2 m-2 w-72 shadow-lg ">
+      <img className="rounded-lg" alt="thumbnail" src={thumbnail} />
+      <ul className="px-2">
+        <li className="font-bold ">{title}</li>
+        <li>{channelTitle}</li>
+        <li>{Math.floor(views/1000)}K views</li>
+      </ul>
     </div>
   );
 };
