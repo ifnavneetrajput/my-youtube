@@ -9,7 +9,7 @@ const usePopularVideos = () => {
     try {
       const data = await fetch(API)
       const json = await data.json();
-      console.log(json)
+ 
       dispatch(addPopularVideos(json.items));
     } catch (err) {
       console.log("error is ", err);

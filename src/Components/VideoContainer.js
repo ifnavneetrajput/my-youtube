@@ -7,7 +7,7 @@ const VideoContainer = () => {
   const popularVideosData = useSelector(
     (store) => store.popularVideos.popularVideos
   );
-  console.log(popularVideosData);
+ 
 
   return (
     <div className="flex flex-wrap mx-7 my-8">
