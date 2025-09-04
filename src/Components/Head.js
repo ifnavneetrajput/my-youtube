@@ -22,18 +22,21 @@ const Head = () => {
     };
   }, [searchQuery]);
 
-  const getSearchSuggeestion = async () => {
-    const data = await fetch(
-      `http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=${searchQuery}`
-    );
-    const json = await data.json();
-   
-    setsuggestions(json[1])
+const getSearchSuggeestion = async () => {
+  const data = await fetch(
+    `http://localhost:8080/api/suggestions?q=${searchQuery}`
+  );
+  const json = await data.json();
+  console.log(json)
+  setsuggestions(json[1]);
 
-    dispatch(cacheResult({
-        [searchQuery]:json[1],
-    }))
-  };
+  dispatch(
+    cacheResult({
+      [searchQuery]: json[1],
+    })
+  );
+};
+
 
   const dispatch = useDispatch();
   const handleToggleMenu = () => {

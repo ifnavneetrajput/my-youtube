@@ -2,9 +2,12 @@
   "name": "my-youtube",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
+    "cors": "^2.8.5",
     "cra-template": "1.2.0",
+    "node-fetch": "^2.7.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
