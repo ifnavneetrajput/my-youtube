@@ -4,3 +4,5 @@
  
 export const YOUTUBE_AUTO_SUGGESTIONS =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+
+  export const BASE_URL = process.env.REACT_APP_API_BASE_URL;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { cacheResult } from "../utils/searchSlice";
+import { BASE_URL } from "../utils/constants";
 
 const Head = () => {
   const [searchQuery, setsearchQuery] = useState("");
@@ -24,7 +25,7 @@ const Head = () => {
 
 const getSearchSuggeestion = async () => {
   const data = await fetch(
-    `http://localhost:8080/api/suggestions?q=${searchQuery}`
+    `${BASE_URL}}/suggestions?q=${searchQuery}`
   );
   const json = await data.json();
   console.log(json)
