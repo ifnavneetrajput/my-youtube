@@ -14,7 +14,7 @@ const VideoContainer = () => {
       {popularVideosData?.map((video) => {
         const { snippet, statistics, id } = video;
         const { thumbnails, channelTitle, title } = snippet;
-        const { viewCount } = statistics;
+      //  const { viewCount } = statistics;
 
         return (
           <Link key={id} to={`/watch?v=${id}`}>
@@ -23,7 +23,7 @@ const VideoContainer = () => {
               thumbnail={thumbnails.medium.url}
               channelTitle={channelTitle}
               title={title}
-              views={viewCount}
+              //views={viewCount}
             />
           </Link>
         );

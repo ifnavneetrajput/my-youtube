@@ -25,7 +25,7 @@ const Head = () => {
 
 const getSearchSuggeestion = async () => {
   const data = await fetch(
-    `${BASE_URL}}/suggestions?q=${searchQuery}`
+    `${BASE_URL}/suggestions?q=${searchQuery}`
   );
   const json = await data.json();
   console.log(json)

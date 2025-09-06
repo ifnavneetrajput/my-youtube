@@ -9,6 +9,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainConatiner from './Components/MainConatiner';
 import WatchPage from './Components/WatchPage';
 function App() {
+console.log("Full process.env:", process.env);
+
+  console.log("API KEY: ", process.env.REACT_APP_API_KEY);
+
   const appRouter = createBrowserRouter([
       {
       path: '/',

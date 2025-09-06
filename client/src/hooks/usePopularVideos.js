@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from "react";
-import { API } from "../utils/constants";
+import { APIKEY } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addPopularVideos } from "../utils/popularVideosSlice";
 
@@ -9,7 +9,7 @@ const usePopularVideos = () => {
   // Wrap your function in useCallback so it can be safely added to useEffect dependencies
   const getPopularVideos = useCallback(async () => {
     try {
-      const data = await fetch(API);
+      const data = await fetch(APIKEY);
       const json = await data.json();
       dispatch(addPopularVideos(json.items));
     } catch (err) {

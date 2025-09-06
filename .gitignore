@@ -16,7 +16,7 @@ server/dist
 *.log
 
 # environment variables
-.env
+client/.env
 .env.local
 .env.development.local
 .env.test.local
