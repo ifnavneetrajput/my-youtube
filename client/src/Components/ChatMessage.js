@@ -1,17 +1,19 @@
-import React from 'react'
+import React from "react";
 
-const ChatMessage = ({name , message}) => {
+const ChatMessage = ({ name, message }) => {
   return (
-    <div className='flex items-center shadow-sm p-2'>
+    <div className="flex items-start gap-2 px-2 py-1">
       <img
-        className="col-span-1 h-8"
-        alt="profile logo"
+        className="h-6 w-6 rounded-full"
+        alt="profile"
         src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
       />
-      <span className='font-bold px-2'>{name}</span>
-      <span >{message}</span>
+      <div className="text-sm">
+        <span className="font-semibold mr-1">{name}</span>
+        <span className="text-gray-700">{message}</span>
+      </div>
     </div>
   );
-}
+};
 
-export default ChatMessage
+export default ChatMessage;

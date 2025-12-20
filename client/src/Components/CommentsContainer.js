@@ -75,20 +75,27 @@ const commentsData = [
 
 const Comment = ({ data }) => {
   const { name, text } = data;
+
   return (
-    <div className="flex shadow-sm bg-gray-100 p-2 rounded-lg my-2">
+    <div className="flex gap-3 my-4">
       <img
-        className="w-12 h-12"
+        className="h-10 w-10 rounded-full"
         alt="user"
         src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
       />
-      <div className="px-3">
-        <p className="font-bold">{name}</p>
-        <p>{text}</p>
+      <div>
+        <p className="font-semibold text-sm">{name}</p>
+        <p className="text-sm text-gray-700">{text}</p>
+
+        <div className="flex gap-4 text-xs text-gray-500 mt-1">
+          <span className="cursor-pointer hover:text-black">Like</span>
+          <span className="cursor-pointer hover:text-black">Reply</span>
+        </div>
       </div>
     </div>
   );
 };
+
 
 const CommentsList = ({ comments }) => {
   // Disclaimer: Don't use indexes as keys

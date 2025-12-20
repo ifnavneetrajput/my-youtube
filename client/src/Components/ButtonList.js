@@ -1,21 +1,26 @@
-import React from 'react'
-import Button from './Button'
+import React from "react";
+import Button from "./Button";
 
 const ButtonList = () => {
-  return (
-    <div className='flex'>
-      <Button title="All" />
-      <Button title="Kapil Sharma" />
-      <Button title="cricket" />
-      <Button title="sports" />
-      <Button title="Entertainment" />
-      <Button title="Bollywood" />
-      <Button title="Comedy" />
-      <Button title="Movies" />
-      <Button title="Romantic" />
+  const categories = [
+    "All",
+    "Kapil Sharma",
+    "Cricket",
+    "Sports",
+    "Entertainment",
+    "Bollywood",
+    "Comedy",
+    "Movies",
+    "Romantic",
+  ];
 
+  return (
+    <div className="flex gap-3 px-4 py-3 overflow-x-auto no-scrollbar">
+      {categories.map((item) => (
+        <Button key={item} title={item} />
+      ))}
     </div>
   );
-}
+};
 
-export default ButtonList
+export default ButtonList;

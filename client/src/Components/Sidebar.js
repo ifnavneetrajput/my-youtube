@@ -1,47 +1,70 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const toggleMenu = useSelector((store) => store.app.isMenuOpen);
-  if (!toggleMenu) return null;
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+  if (!isMenuOpen) return null;
+
   return (
-    <div className=" w-40 px-5 mx-6">
-      <Link to='/' >Home</Link>
-      <h1>shorts</h1>
-      <h1>Subscription</h1>
-      <hr></hr>
-      <div>
-        <h1 className="font-bold">You</h1>
+    <div className="w-56 p-4 shadow-md h-screen sticky top-0 overflow-y-auto bg-white">
+  
+      <div className="mb-4">
+        <Link
+          to="/"
+          className="block px-3 py-2 rounded-lg hover:bg-gray-100 font-medium"
+        >
+          🏠 Home
+        </Link>
+        <p className="px-3 py-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+          🎬 Shorts
+        </p>
+        <p className="px-3 py-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+          📺 Subscriptions
+        </p>
+      </div>
+
+      <hr />
+
+     
+      <div className="mt-4">
+        <h1 className="px-3 mb-2 font-semibold text-sm text-gray-600">You</h1>
         <ul>
-          <li>History</li>
-          <li>Playlist</li>
-          <li>Your-video</li>
-          <hr></hr>
+          <li className="sidebar-item">🕒 History</li>
+          <li className="sidebar-item">📂 Playlists</li>
+          <li className="sidebar-item">🎥 Your videos</li>
         </ul>
       </div>
 
+      <hr className="my-4" />
+
+
       <div>
-        <h1 className="font-bold">Subscription</h1>
+        <h1 className="px-3 mb-2 font-semibold text-sm text-gray-600">
+          Subscriptions
+        </h1>
         <ul>
-          <li>ABP-News</li>
-          <li>ABP-Live</li>
-          <li>Adda-247</li>
-          <hr></hr>
+          <li className="sidebar-item">📰 ABP News</li>
+          <li className="sidebar-item">📡 ABP Live</li>
+          <li className="sidebar-item">📘 Adda 247</li>
         </ul>
       </div>
 
+      <hr className="my-4" />
+
+
       <div>
-        <h1 className="font-bold">Explore</h1>
+        <h1 className="px-3 mb-2 font-semibold text-sm text-gray-600">
+          Explore
+        </h1>
         <ul>
-          <li>Trending</li>
-          <li>Shoping</li>
-          <li>Movies</li>
-          <hr></hr>
+          <li className="sidebar-item">🔥 Trending</li>
+          <li className="sidebar-item">🛒 Shopping</li>
+          <li className="sidebar-item">🎞 Movies</li>
         </ul>
       </div>
     </div>
   );
-}
+};
 
-export default Sidebar
+export default Sidebar;

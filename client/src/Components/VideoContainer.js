@@ -7,27 +7,27 @@ const VideoContainer = () => {
   const popularVideosData = useSelector(
     (store) => store.popularVideos.popularVideos
   );
- 
 
   return (
-    <div className="flex flex-wrap mx-7 my-8">
-      {popularVideosData?.map((video) => {
-        const { snippet, statistics, id } = video;
-        const { thumbnails, channelTitle, title } = snippet;
-      //  const { viewCount } = statistics;
+    <div className="px-4 py-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {popularVideosData?.map((video) => {
+          const { snippet, statistics, id } = video;
+          const { thumbnails, channelTitle, title } = snippet;
 
-        return (
-          <Link key={id} to={`/watch?v=${id}`}>
-            <VideoCard
-              id={id}
-              thumbnail={thumbnails.medium.url}
-              channelTitle={channelTitle}
-              title={title}
-              //views={viewCount}
-            />
-          </Link>
-        );
-      })}
+          return (
+            <Link key={id} to={`/watch?v=${id}`} className="block">
+              <VideoCard
+                id={id}
+                thumbnail={thumbnails.medium.url}
+                channelTitle={channelTitle}
+                title={title}
+                // views={statistics?.viewCount}
+              />
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };
